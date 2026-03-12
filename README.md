@@ -2,6 +2,12 @@
 
 > 🚀 **预编译环境备份** - 5 分钟快速部署到新设备，无需编译等待！
 
+## 📥 下载地址
+
+**GitHub Release:** https://github.com/DengYongjiuDengYongjiu/mem0-solution-for-android/releases/tag/v1.0.0
+
+**预编译环境:** [mem0-env.tar.gz](https://github.com/DengYongjiuDengYongjiu/mem0-solution-for-android/releases/download/v1.0.0/mem0-env.tar.gz) (141MB, 解压后 509MB)
+
 ## 📦 备份内容
 
 ```
@@ -29,17 +35,21 @@ mem0-solution-for-android/
 **适用场景:** 新设备/重装系统，5 分钟快速恢复
 
 ```bash
-# 1. 下载备份
-git clone https://github.com/DengYongjiuDengYongjiu/mem0-termux-solution.git
-cd mem0-termux-solution/mem0-solution-for-android
+# 1. 克隆示例代码
+git clone https://github.com/DengYongjiuDengYongjiu/mem0-solution-for-android.git
+cd mem0-solution-for-android
 
-# 2. 安装 mamba (如果没有)
+# 2. 下载预编译环境 (从 Releases)
+mkdir -p ~/.local/share/mamba/envs/
+wget https://github.com/DengYongjiuDengYongjiu/mem0-solution-for-android/releases/download/v1.0.0/mem0-env.tar.gz
+# 或用浏览器下载后移动到此目录
+
+# 3. 安装 mamba (如果没有)
 curl -Ls https://micro.mamba.pm/install.sh | sh
 source ~/.bashrc
 
-# 3. 解压预编译环境
-mkdir -p ~/.local/share/mamba/envs/
-tar -xzf compiled-env/mem0-env.tar.gz -C ~/.local/share/mamba/envs/
+# 4. 解压预编译环境
+tar -xzf mem0-env.tar.gz -C ~/.local/share/mamba/envs/
 
 # 4. 激活环境
 mamba activate mem0
